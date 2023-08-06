@@ -41,7 +41,7 @@ const Dashbord = ({onClickButton})=>{
         const response = await fetch(`${mockAPIUrl}/teacher`);
         const data = await response.json();
         setTeacherData(data);
-        console.log(data, data.length);
+     
     };
 
     const fetchStudentData = async () => {
@@ -49,7 +49,7 @@ const Dashbord = ({onClickButton})=>{
         const response = await fetch(`${mockAPIUrl}/student`);
         const data = await response.json();
         setStudentData(data);
-        console.log(data, data.length);
+   
     };
 
     useEffect(() => {

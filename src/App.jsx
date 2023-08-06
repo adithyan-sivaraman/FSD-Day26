@@ -12,9 +12,17 @@ import CreateStudent from './Components/Student/Add';
 import DeleteStudent from './Components/Student/Delete';
 import ViewStudent from './Components/Student/View';
 import Dashbord from './Components/Dashboard';
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 
 function App() {
+
+  useEffect(()=>{
+  const showComp = localStorage.getItem('showComp');
+  if(!showComp){
+    localStorage.setItem('showComp','');
+  }
+  },[])
+
   const [isActive,setActive] = useState(null)
  
   const handleClick = (elementId) =>{
@@ -26,7 +34,13 @@ function App() {
   }
 const [divVisible,setDivVisible] = useState('component')
   const showComponent=(id)=>{
-    setDivVisible(`component${id}`)
+    const showComp = localStorage.getItem('showComp');
+
+    if(showComp!==String(id)) {
+      setDivVisible(`component${id}`)
+      localStorage.setItem('showComp',id);
+    }
+    
   }
   
   return (
