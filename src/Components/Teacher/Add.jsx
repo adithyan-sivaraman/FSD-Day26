@@ -1,6 +1,6 @@
 import { useFormik } from "formik";
 import { useState } from "react";
-import States from "../states";
+import States from "../States";
 import mockAPIUrl from "../../Config";
 const CreateTeacher = () => {
     const initialValues = {

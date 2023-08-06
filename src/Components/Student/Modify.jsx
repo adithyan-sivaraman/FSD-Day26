@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import mockAPIUrl from "../../Config";
-import States from "../states";
+import States from "../States";
 
 const ModifyStudent = () => {
     const initialValues ={
